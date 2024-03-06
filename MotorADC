@@ -1,0 +1,89 @@
+#include <wiringPiI2C.h>
+#include <unistd.h> // For usleep function
+#include <iostream>
+#include <algorithm> // For std::sort
+#include <vector>
+
+class Adc {
+private:
+    int fd; // File descriptor for I2C device
+    int ADDRESS = 0x48; // I2C address of the ADC device
+    int PCF8591_CMD = 0x40; // Command for PCF8591
+    int ADS7830_CMD = 0x84; // Command for ADS7830
+    std::string Index; // To store the type of ADC device
+
+    int analogReadPCF8591(int chn) {
+        std::vector<int> values(9);
+        for (int i = 0; i < 9; ++i) {
+            values[i] = wiringPiI2CReadReg8(fd, PCF8591_CMD + chn);
+        }
+        std::sort(values.begin(), values.end());
+        return values[4]; // Return the median value
+    }
+
+    float recvPCF8591(int channel) {
+        int value1, value2;
+        do {
+            value1 = analogReadPCF8591(channel);
+            value2 = analogReadPCF8591(channel);
+        } while (value1 != value2);
+        float voltage = value1 / 256.0f * 3.3f;
+        return round(voltage * 100) / 100; // Round to 2 decimal places
+    }
+
+    float recvADS7830(int channel) {
+        int COMMAND_SET = ADS7830_CMD | ((((channel << 2) | (channel >> 1)) & 0x07) << 4);
+        wiringPiI2CWrite(fd, COMMAND_SET);
+        int value1, value2;
+        do {
+            value1 = wiringPiI2CRead(fd);
+            value2 = wiringPiI2CRead(fd);
+        } while (value1 != value2);
+        float voltage = value1 / 255.0f * 3.3f;
+        return round(voltage * 100) / 100; // Round to 2 decimal places
+    }
+
+public:
+    Adc() {
+        fd = wiringPiI2CSetup(ADDRESS);
+        for (int i = 0; i < 3; ++i) {
+            int aa = wiringPiI2CReadReg8(fd, 0xf4);
+            if (aa < 150) {
+                Index = "PCF8591";
+            } else {
+                Index = "ADS7830";
+            }
+        }
+    }
+
+    float recvADC(int channel) {
+        if (Index == "PCF8591") {
+            return recvPCF8591(channel);
+        } else if (Index == "ADS7830") {
+            return recvADS7830(channel);
+        }
+        return 0.0f; // In case neither condition is met
+    }
+
+    void i2cClose() {
+        close(fd); // Use close() from unistd.h
+    }
+};
+
+int main() {
+    std::cout << "Program is starting ..." << std::endl;
+    Adc adc;
+
+    while (true) {
+        float Left_IDR = adc.recvADC(0);
+        std::cout << Left_IDR << std::endl;
+        float Right_IDR = adc.recvADC(1);
+        std::cout << Right_IDR << std::endl;
+        float Power = adc.recvADC(2) * 3;
+        std::cout << Power << std::endl;
+        usleep(1000000); // Sleep for 1 second
+        std::cout << "----" << std::endl;
+    }
+
+    return 0;
+}
