@@ -15,7 +15,7 @@ But it doesn't end there. Imagine Sarah encountering a traffic light displaying 
  
 ## Hardware Requirements   
 
-![hardware_01](https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/3fc3ff4e-4478-4ecf-abde-8287d8260a51)
+![hardware_01](https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/52bf056a-a633-4477-aae9-0a9a46122aeb)
 
 
 ## Software Development   
