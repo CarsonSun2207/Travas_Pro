@@ -1,4 +1,6 @@
-# Onboard Anti-Collision Control and Virtual Traffic Light System - `Travis`
+# Onboard Anti-Collision Control and Virtual Traffic Light System - `Travas_Pro`
+
+
 
 
 ## Motivation   
@@ -47,7 +49,42 @@ Updated the system packages to the latest versions
 Enabled SSH and VNC for remote access
 ## Tests 
 Perform unit test in this work. Test cases are:
-- Ultrasonic sensor
+- Motor
+```
+...
+switch (command) {
+            case 1:		#Forward
+                motor.Forward();
+                break;
+            case 2:		#Backward
+                motor.Backward();
+                break;
+            case 3:		#TurnLeft
+                motor.TurnLeft();
+                break;
+            case 4:		#TurnRight
+                motor.TurnRight();
+                break;
+            case 5:		#Stop
+                motor.Stop();
+                break;
+            default:
+                std::cerr << "Invalid command" << std::endl;
+                break;
+        }
+...
+```
+- RFID Reader
+```
+...
+   // Initializes PCD
+   RFIDThread rfidthd;
+   TogglingThread tglthd;
+   rfidthd.start();
+   rfidthd.join();
+...
+```
+- Ultrasonic Sensor and Motor
 ```
 ...
 if (distance != -1 && distance < 60) {
@@ -56,8 +93,8 @@ if (distance != -1 && distance < 60) {
             motor.Forward();
         }
 ...
-
 ```
+- 
 ## Prerequisites   
 
 ## Social Media   
