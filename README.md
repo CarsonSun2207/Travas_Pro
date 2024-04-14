@@ -36,6 +36,8 @@ But it doesn't end there. Imagine Sarah encountering a traffic light displaying 
 - Circuit Diagram 
 ![hardware_01](https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/44bc54b7-b3c2-4fc6-838f-fb386b0eae8f)
 
+- Pin Connection
+![image](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/fb38fcc2-b90c-4e84-b29a-5e3afccb84ab)
 
 ## Software Development   
 - Libraries    
