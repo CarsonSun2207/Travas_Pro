@@ -1,6 +1,4 @@
-# Onboard Anti-Collision Control and Virtual Traffic Light System - `DrivePro`
-
-## Table of Contents   
+# Onboard Anti-Collision Control and Virtual Traffic Light System - `Travis`
 
 
 ## Motivation   
@@ -15,18 +13,54 @@ But it doesn't end there. Imagine Sarah encountering a traffic light displaying 
  
 ## Hardware Requirements   
 
+- Acquired Raspberry Pi 4B board ×2
+- DC speed reduction motor (DRV8837) ×4
+- Rechargeable 18560 Bottom-top battery ×2    
+- RFID Reader (RC522)
+- Driver Board (PCA9685PW)
+- Ultrasonic sensor (HC-SR04)
+- Ultrasonic Obstacle Avoidance Module (HC-SR04)    
+- Servo (SG90) x2
+- Connection board      
+- Jumper Wire F/F(4) 
+- XH-2.54-5Pin Cable
+- F-F Cables
+- Prepared the necessary peripherals:    
+    - HDMI display
+    - USB keyboard and mouse
+    - Power supply
+    - Micro SD card with installed Raspbian OS System ×2
+
+- Circuit Diagram 
 ![hardware_01](https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/44bc54b7-b3c2-4fc6-838f-fb386b0eae8f)
 
 
 ## Software Development   
+- Libraries    
+    - pigpio
+    - CMFRC522
 
+## Environmental Configuration   
+- RPi Settings
+Configured network settings (Wi-Fi or Ethernet) 
+Updated the system packages to the latest versions
+Enabled SSH and VNC for remote access
+## Tests 
+Perform unit test in this work. Test cases are:
+- Ultrasonic sensor
+```
+...
+if (distance != -1 && distance < 60) {
+            motor.Stop();
+        } else {
+            motor.Forward();
+        }
+...
 
-## Installation   
-
-## Tests   
-
-## How to Use   
+```
+## Prerequisites   
 
 ## Social Media   
+- Welcome to follow our TikTok [@travas_pro](http://www.tiktok.com/@travas_pro)        
 
 ## Reference Links   
