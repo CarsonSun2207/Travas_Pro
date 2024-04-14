@@ -41,13 +41,14 @@ But it doesn't end there. Imagine Sarah encountering a traffic light displaying 
 - Libraries    
     - pigpio
     - CMFRC522
+- Class
+    - `Motor`
+    - `Ultrasonic`
+    - `PCA9685`
+    - 
 
-## Environmental Configuration   
-- RPi Settings
-Configured network settings (Wi-Fi or Ethernet) 
-Updated the system packages to the latest versions
-Enabled SSH and VNC for remote access
-## Tests 
+
+## Unit Test
 Perform unit test in this work. Test cases are:
 - Motor
 ```
@@ -96,6 +97,18 @@ if (distance != -1 && distance < 60) {
 ```
 - 
 ## Prerequisites   
+1. Downloading from github.
+2. Installing needed libraries on your Pi.
+>* PIGPIO: The library can be found [here](https://abyz.me.uk/rpi/pigpio/download.html)
+>* CMFRC522: The library can be found [here](https://github.com/chihebabid/CMFRC522)  
+
+3. To compile and build the code
+
+## Tests
+Steps to run test are:
+```
+
+```
 
 ## Social Media   
 - Welcome to follow our TikTok [@travas_pro](http://www.tiktok.com/@travas_pro)        
