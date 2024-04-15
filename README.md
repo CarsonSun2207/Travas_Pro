@@ -23,23 +23,27 @@ But it doesn't end there. Imagine Sarah encountering a traffic light displaying 
 - Ultrasonic sensor (HC-SR04)
 - Ultrasonic Obstacle Avoidance Module (HC-SR04)    
 - Servo (SG90) x2
-- Connection board      
+- Tracking Sensor     
 - Jumper Wire F/F(4) 
 - XH-2.54-5Pin Cable
-- F-F Cables
+- F-F Cables x n
 - Prepared the necessary peripherals:    
     - HDMI display
     - USB keyboard and mouse
     - Power supply
     - Micro SD card with installed Raspbian OS System ×2
 
-- Circuit Diagram 
-![hardware_01](https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/44bc54b7-b3c2-4fc6-838f-fb386b0eae8f)
+- Circuit Diagram
+![circuit](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/500ca218-14d0-4203-b5b5-350687bbdd5a)
 
 - Pin Connection
-![image](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/fb38fcc2-b90c-4e84-b29a-5e3afccb84ab)
+![image](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/1185ea17-cd33-4689-b0ad-5ff84832d475)
+
 
 ## Software Development   
+### The First Raspberry Pi
+The first Raspberry Pi acts as a node connected to the server, which is mounted on the car.
+- Function: When the car passes through the entrance of the road, the RFID reader on the car will sense the chip corresponding to the entrance, thus sending an entry signal to the server, and will receive the signal from the corresponding server to carry out the next operation. Similarly, when the car is leaving the road, the RFID reader on the car will sense the chip corresponding to the exit, thus sending the leave signal to the server.
 - Libraries    
     - pigpio
     - CMFRC522
@@ -48,6 +52,9 @@ But it doesn't end there. Imagine Sarah encountering a traffic light displaying 
     - `Ultrasonic`
     - `PCA9685`
     - 
+### The second Raspberry Pi
+The second Raspberry Pi acts as a server that connects the traffic light signals of the road system. 
+- Function: When it receives the RFID signal coming from the car to enter the road, if the traffic light signal is red at this time, it will transmit the command of stop to the raspberry pi in the car, so as to make the car stop; if the light is green at this time, it will not send any command. When it receives the RFID signal from the car to leave, it will stop sending commands to the raspberry pi in the car according to the traffic light signal.
 
 
 ## Unit Test
