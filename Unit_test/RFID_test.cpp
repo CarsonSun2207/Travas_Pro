@@ -1,7 +1,7 @@
 /*
 To complie this program:
 1. install g++
-2. Create static library by:
+2. Create static library by: *MAKE SURE that CMFRC522 is in the same directory with RFID_test*
     g++ -c CMFRC522.cpp
     ar rcs CMFRC522.a CMFRC522.o
 3.  Complie:
