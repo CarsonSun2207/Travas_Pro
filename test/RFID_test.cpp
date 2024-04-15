@@ -1,3 +1,14 @@
+/*
+To complie this program:
+1. install g++
+2. Create static library by:
+    g++ -c CMFRC522.cpp
+    ar rcs CMFRC522.a CMFRC522.o
+3.  Complie:
+    g++ RFID_test.cpp -o RFID_test -lpigpio -lrt -lpthread -L. -l:CMFRC522.a
+4. Run:
+    sudo ./RFID_test
+*/
 
 #include "CMFRC522.h"
 #include "pigpio.h"
