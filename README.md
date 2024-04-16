@@ -26,7 +26,11 @@ Meet Travas, a daily commuter navigating bustling city streets. As he merges int
 On a foggy morning, as Travas approaches an intersection, the system detects an unexpected pedestrian shrouded in mist. In a blink, his vehicle gracefully halts, preventing a potential mishap. As the pedestrian leaves, the car intuitively resumes its journey, seamlessly blending innovation with everyday life.
 
 But it doesn't end there. Imagine Travas encountering a traffic light displaying a vibrant red hue. Even when the light turns green, his vehicle, guided by our intelligent system, remains stationary if pedestrians persist ahead. A fusion of obstacle awareness and traffic signal synchronization ensures not just safety but an efficient and harmonious flow of traffic.
- 
+
+project  preponderance
+1. System flexibility： Line tracking and obstacle avoidance in real life: The integrated functionalities can be utilised to navigate through complex road conditions especially when pedestrians crossing the road ignoring the traffic light.      In a real-life scenario, the programme can be extended to follow a designated road path instead of line track in this project
+2. Driving safety: At the traffic entrance with a large volume of traffic, our system can greatly control the accident rate after optimization, giving great security to urban traffic
+3.Humanistics: Also, the code has performed outstanding capability to prioritise pedestrians’ lives beyond path-navigating, illustrating great care of humanistics.
 ## Hardware Requirements   
 
 - Acquired Raspberry Pi 4B board ×2
