@@ -57,6 +57,7 @@ But it doesn't end there. Imagine Travas encountering a traffic light displaying
     - Power supply
     - Micro SD card with installed Raspbian OS System ×2
 
+
 - Circuit Diagram
 ![circuit_2](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/ddcf9ced-58ac-46d8-aa3d-806cbf31eb5f)
 
@@ -79,7 +80,7 @@ The first Raspberry Pi acts as a node connected to the server, which is mounted 
     - `PCA9685`
         - Configuring the registers and channels to control the DC motor set.
         - Create I2C connection with the elements stated above.
-    - `Motor`  
+    - `Motor`
         - Defining the movement logic. (Forward, turning, backward, etc.)
         - Setting the speed.
     - `Ultrasonic`
@@ -117,6 +118,7 @@ The second Raspberry Pi acts as a server that connects the traffic light signals
         - Detect whether the message is entering or exiting.
     - `Trafficsig`
         - Generate the traffic light signal.
+
 
 ## Unit Test
 Perform unit test in this work. Test cases are:
