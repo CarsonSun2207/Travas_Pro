@@ -240,11 +240,7 @@ Perform unit test in this work. Test cases are:
 
 3. To compile and build the code
 
-## Tests
-Steps to run test are:
-```
 
-```
 
 ## Social Media   
 - Welcome to follow our TikTok [@travas_pro](http://www.tiktok.com/@travas_pro)
