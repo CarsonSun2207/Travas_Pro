@@ -71,11 +71,11 @@ The first Raspberry Pi acts as a node connected to the server, which is mounted 
     - `Motor`  
         - Defining the movement logic. (Forward, turning, backward, etc.)
         - Setting the speed.
-    - `Ultrasonic`  
-        - Calculating the relative distance to the obstacle.
+    - `Ultrasonic`
+        - Calculating the relative distance to the obstacle.
         - Return the calculated distance and store the value.
-    - `Linetracking`  
-        - Defining the line tracking logic.
+    - `Linetracking`
+        - Defining the line tracking logic.
         - Configure the light sensor array pins.
     - `Client`
         - 
