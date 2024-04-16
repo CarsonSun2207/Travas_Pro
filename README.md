@@ -137,9 +137,9 @@ Steps to run test are:
 ## Social Media   
 - Welcome to follow our TikTok [@travas_pro](http://www.tiktok.com/@travas_pro)        
 ## Contact us
-Carsonsun2207 https://github.com/CarsonSun2207
-cyter23       https://github.com/cyter23
-KKJYu         https://github.com/KKJYu
-YUQINGLI77    https://github.com/YUQINGLI77
+-Carsonsun2207 https://github.com/CarsonSun2207
+-cyter23       https://github.com/cyter23
+-KKJYu         https://github.com/KKJYu
+-YUQINGLI77    https://github.com/YUQINGLI77
 ## 
 ## Reference Links   
