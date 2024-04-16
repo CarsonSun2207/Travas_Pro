@@ -1,7 +1,7 @@
 # Onboard Anti-Collision Control and Virtual Traffic Light System - `Travas_Pro`
 
-![circuit]("C:\Users\YUQING LI\OneDrive - University of Glasgow\图片\Travas.png")
-<img src="...jpg" width="50%" height="50%">
+![circuit]("C:\Users\YUQING LI\OneDrive - University of Glasgow\图片\Travas.png src="...jpg" width="50%" height="50%"")
+
 ## Motivation   
 
 In the not-so-distant future, picture yourself stepping into a world where vehicles become guardians of safety and pioneers of intelligent mobility. Our latest project, an Anti-Collision Control and Virtual Traffic Light System, is the protagonist of this narrative, reshaping the way we perceive road safety.
