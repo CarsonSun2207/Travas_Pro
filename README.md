@@ -106,6 +106,10 @@ The first Raspberry Pi acts as a node connected to the server, which is mounted 
 - Flow Chart
     - Buzzer
   ![Buzzer_FlowChart](https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/a683ecc8-5619-4a22-80cf-63dcd7f0fec5)
+                                                                                                                                          
+  - Ultrasonic and Line Tracking
+  ![UltrasonicLineTrack_FlowChart](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/9dbbd942-08f1-4576-ab61-486260da80df)
+
 
 ### The second Raspberry Pi
 The second Raspberry Pi acts as a server that connects the traffic light signals of the road system. 
@@ -124,6 +128,7 @@ The second Raspberry Pi acts as a server that connects the traffic light signals
 - Flow Chart
     - Server
   ![Server_FlowChart](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/dc733559-fd17-40ce-8423-bee159672ef6)
+  
 
 
 ## Unit Test
