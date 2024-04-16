@@ -1,8 +1,10 @@
 # Onboard Anti-Collision Control and Virtual Traffic Light System - `Travas_Pro`
 
 <p align="center">
-  <img width="301" alt="Travas" src="https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/68d2392a-a9cd-4fac-abae-10b134b9f2c2">
+  <img src="https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/a4748689-0858-4820-ae45-0a3ee0b57822" />
 </p>
+
+
 
 ## Motivation   
 
