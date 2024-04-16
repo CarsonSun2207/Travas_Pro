@@ -7,11 +7,11 @@
 
 In the not-so-distant future, picture yourself stepping into a world where vehicles become guardians of safety and pioneers of intelligent mobility. Our latest project, an Anti-Collision Control and Virtual Traffic Light System, is the protagonist of this narrative, reshaping the way we perceive road safety.
 
-Meet Sarah, a daily commuter navigating bustling city streets. As she merges into traffic, her vehicle becomes a sanctuary of security, thanks to our revolutionary solution.
+Meet Travas, a daily commuter navigating bustling city streets. As he merges into traffic, his vehicle becomes a sanctuary of security, thanks to our revolutionary solution.
 
-On a foggy morning, as Sarah approaches an intersection, the system detects an unexpected pedestrian shrouded in mist. In a blink, her vehicle gracefully halts, preventing a potential mishap. As the pedestrian leaves, the car intuitively resumes its journey, seamlessly blending innovation with everyday life.
+On a foggy morning, as Travas approaches an intersection, the system detects an unexpected pedestrian shrouded in mist. In a blink, his vehicle gracefully halts, preventing a potential mishap. As the pedestrian leaves, the car intuitively resumes its journey, seamlessly blending innovation with everyday life.
 
-But it doesn't end there. Imagine Sarah encountering a traffic light displaying a vibrant red hue. Even when the light turns green, her vehicle, guided by our intelligent system, remains stationary if pedestrians persist ahead. A fusion of obstacle awareness and traffic signal synchronization ensures not just safety but an efficient and harmonious flow of traffic.
+But it doesn't end there. Imagine Travas encountering a traffic light displaying a vibrant red hue. Even when the light turns green, his vehicle, guided by our intelligent system, remains stationary if pedestrians persist ahead. A fusion of obstacle awareness and traffic signal synchronization ensures not just safety but an efficient and harmonious flow of traffic.
  
 ## Hardware Requirements   
 
