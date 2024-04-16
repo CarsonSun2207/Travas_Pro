@@ -239,8 +239,28 @@ Perform unit test in this work. Test cases are:
 >* CMFRC522: The library can be found [here](https://github.com/chihebabid/CMFRC522)  
 
 3. To compile and build the code
+- Scene 1: Line Tracking and Ultrasonic
+   - For the 1st Raspberry Pi (Client)
+  ```
+    g++ -Wall -pthread -o ULT Ultrasonic_LineTrack_test.cpp -lpigpio -lrt
+    sudo ./ULT
+  ```
+ 
+- Scene 2: RFID control and Buzzer
+   - For the 1st Raspberry Pi (Client)
+  ```
+    g++ -c "lib.cpp"
+    ar rcs  "lib.a" "lib.o"
+    g++ -Wall -pthread -o Buzzer_client Buzzer_client .cpp -lpigpio -lrt -L. -l:CMFRC522.a
+    sudo ./Buzzer_client
+  ```
 
-
+   - For the 2nd Raspberry Pi (Server)
+    
+  ```
+  g++ -Wall -pthread -o Server Server.cpp
+  sudo ./Server
+  ```
 
 ## Social Media   
 - Welcome to follow our TikTok [@travas_pro](http://www.tiktok.com/@travas_pro)
