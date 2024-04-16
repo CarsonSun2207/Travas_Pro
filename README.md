@@ -58,10 +58,11 @@ But it doesn't end there. Imagine Travas encountering a traffic light displaying
     - Micro SD card with installed Raspbian OS System ×2
 
 - Circuit Diagram
-![circuit](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/500ca218-14d0-4203-b5b5-350687bbdd5a)
+![circuit_2](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/ddcf9ced-58ac-46d8-aa3d-806cbf31eb5f)
 
-- Pin Connection
-![image](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/1185ea17-cd33-4689-b0ad-5ff84832d475)
+
+- Pin Connection	
+![image](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/d821acee-e734-4a32-ac53-96be38a55d33)
 
 
 ## Software Development   
@@ -88,21 +89,34 @@ The first Raspberry Pi acts as a node connected to the server, which is mounted 
         - Defining the line tracking logic.
         - Configure the light sensor array pins.
     - `Client`
-        - 
+        - Read the byte number of the message in the socket.
+        - Set up socket connection with server by host address and port number.
+        - Send a message depending on whether the car has entered or exited the zone.
+        - Identify the signal sent by the server and recreate one for the client.
+        - Read the data and identify what the signal is.
     - `RFIDThread`
-        - 
+        - To detect whether the car is present and store the message into a character array get_id[16] 
     - `Readingmsg`
-        - 
+        - Read the data depending on the number of byte read, which is not equal to 0
     - `Motioncntrl`
-        - 
-    - 
+        - Implement the start and stop the motion of the motor depending on the received signal by the server (referred as clie.sigden())
+    - `CppThread`
+        - Create a thread wrapper for future use
+
 ### The second Raspberry Pi
 The second Raspberry Pi acts as a server that connects the traffic light signals of the road system. 
 - Function: When it receives the RFID signal coming from the car to enter the road, if the traffic light signal is red at this time, it will transmit the command of stop to the Raspberry Pi in the car, to make the car stop; if the light is green at this time, it will not send any command. When it receives the RFID signal from the car to leave, it will stop sending commands to the Raspberry Pi in the car according to the traffic light signal.
 - Class
-    - `Server`:   
-    - `Readmsg`:   
-    - `Trafficsig`:   
+    - `Server`
+        - Set up server by the server IP address & port number.
+        - Accept the connection request from the client in the socket-clt_soc.
+        - Read the message sent from the client and store it in the character array pointer buffer.
+        - Send traffic signal to client depending on the signal, which is altered by the thread Trafficsig.
+    - `Readmsg`
+        - Keep reading the message from the client.
+        - Detect whether the message is entering or exiting.
+    - `Trafficsig`
+        - Generate the traffic light signal.
 
 ## Unit Test
 Perform unit test in this work. Test cases are:
