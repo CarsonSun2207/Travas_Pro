@@ -103,7 +103,8 @@ The first Raspberry Pi acts as a node connected to the server, which is mounted 
         - Implement the start and stop the motion of the motor depending on the received signal by the server (referred as clie.sigden())
     - `CppThread`
         - Create a thread wrapper for future use
-
+- Flow Chart
+    - 
 ### The second Raspberry Pi
 The second Raspberry Pi acts as a server that connects the traffic light signals of the road system. 
 - Function: When it receives the RFID signal coming from the car to enter the road, if the traffic light signal is red at this time, it will transmit the command of stop to the Raspberry Pi in the car, to make the car stop; if the light is green at this time, it will not send any command. When it receives the RFID signal from the car to leave, it will stop sending commands to the Raspberry Pi in the car according to the traffic light signal.
@@ -118,6 +119,9 @@ The second Raspberry Pi acts as a server that connects the traffic light signals
         - Detect whether the message is entering or exiting.
     - `Trafficsig`
         - Generate the traffic light signal.
+- Flow Chart
+    - Server
+  ![Server_FlowChart](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/dc733559-fd17-40ce-8423-bee159672ef6)
 
 
 ## Unit Test
