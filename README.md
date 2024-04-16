@@ -34,7 +34,8 @@ But it doesn't end there. Imagine Sarah encountering a traffic light displaying 
     - Micro SD card with installed Raspbian OS System ×2
 
 - Circuit Diagram 
-![hardware_01](https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/44bc54b7-b3c2-4fc6-838f-fb386b0eae8f)
+![circuit](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/a55dc2eb-036c-4963-b449-45f7f8affec2)
+
 
 - Pin Connection
 ![image](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/fb38fcc2-b90c-4e84-b29a-5e3afccb84ab)
@@ -44,9 +45,18 @@ But it doesn't end there. Imagine Sarah encountering a traffic light displaying 
     - pigpio
     - CMFRC522
 - Class
-    - `Motor`
-    - `Ultrasonic`
     - `PCA9685`
+        - Configuring the registers and channels to control the DC motor set.
+        - Create I2C connection with the elements stated above.
+    - `Motor`
+        - Defining the movement logic. (Forward, turning, backward, etc.)
+        - Setting the speed.
+    - `Ultrasonic`
+        - Calculating the relative distance to the obstacle.
+        - Return the calculated distance and store the value.
+    - `Linetracking`
+        - Defining the line tracking logic.
+        - Configure the light sensor array pins.
     - 
 
 
