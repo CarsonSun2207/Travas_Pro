@@ -190,7 +190,30 @@ if (distance != -1 && distance < 60) {
        { close(server.clt_soc);
         close(server_fd);
 ```
-
+- Client
+```
+...
+    Client client;
+    client.setupSocket(host, port);// create class 
+    if(gpioInitialise()<0){
+        std::cout<<"Pigpio initialization failed"<<std::endl;
+        return 1;
+    }
+    int i2cHandle = i2cOpen(1, PCA9685_ADDR, 0);
+    if (i2cHandle < 0) {
+        std::cerr << "Failed to open I2C communication." << std::endl;
+        return 1; 
+    }
+    gpioSetISRFunc(18, RISING_EDGE, 0, gpioInterruptHandler);
+    PCA9685 pca(i2cHandle);
+    pca.setup();
+    Motor motor(pca);
+    RFIDThread rfidrd(client);
+    Readingmsg rdingmsg(client);
+    Motioncntrl motctl(client, motor);
+    if (client.sock < 0) return -1;
+    ...
+```
 ## Installation   
 1. Downloading from github.
 2. Installing needed libraries on your Pi.
