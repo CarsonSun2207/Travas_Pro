@@ -65,13 +65,26 @@ The first Raspberry Pi acts as a node connected to the server, which is mounted 
     - pigpio
     - CMFRC522
 - Class
-    - `Motor`:  
-    - `Ultrasonic`:   
-    - `PCA9685`:   
-    - `Client`:   
-    - `RFIDThread`:   
-    - `Readingmsg`:  
-    - `Motioncntrl`:   
+    - `PCA9685`
+        - Configuring the registers and channels to control the DC motor set.
+        - Create I2C connection with the elements stated above.
+    - `Motor`
+        - Defining the movement logic. (Forward, turning, backward, etc.)
+        - Setting the speed.
+    - `Ultrasonic`
+        - Calculating the relative distance to the obstacle.
+        - Return the calculated distance and store the value.
+    - `Linetracking`
+        - Defining the line tracking logic.
+        - Configure the light sensor array pins.
+    - `Client`
+        - 
+    - `RFIDThread`
+        - 
+    - `Readingmsg`
+        - 
+    - `Motioncntrl`
+        - 
     - 
 ### The second Raspberry Pi
 The second Raspberry Pi acts as a server that connects the traffic light signals of the road system. 
@@ -175,6 +188,6 @@ Steps to run test are:
 - Hairuo Sun    https://github.com/CarsonSun2207
 - Chi Yin Leung https://github.com/cyter23
 - Jiaqi Yu      https://github.com/KKJYu
-- YuQing Li     https://github.com/YUQINGLI77
+- YUQING LI     https://github.com/YUQINGLI77
 ## 
 ## Reference Links   
