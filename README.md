@@ -167,7 +167,12 @@ Perform unit test in this work. Test cases are:
 - Line Tracking
 ```
     ...
+    LineTracking linetracking(motor);
 
+    while (true) {
+        linetracking.detectLine(); // Resume line tracking
+        this_thread::sleep_for(chrono::milliseconds(100));
+    }
     ...
 ```
 - Server
