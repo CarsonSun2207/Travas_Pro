@@ -137,9 +137,9 @@ Steps to run test are:
 ## Social Media   
 - Welcome to follow our TikTok [@travas_pro](http://www.tiktok.com/@travas_pro)        
 ## Contact us
-- Hairuo Sun    https://github.com/CarsonSun2207
-- Chi Yin Leung https://github.com/cyter23
-- Jiaqi Yu      https://github.com/KKJYu
-- YUQING LI-----https://github.com/YUQINGLI77
+- Hairuo Sun    |https://github.com/CarsonSun2207|
+- Chi Yin Leung |https://github.com/cyter23|
+- Jiaqi Yu      |https://github.com/KKJYu|
+- YUQING LI     |https://github.com/YUQINGLI77|
 ## 
 ## Reference Links   
