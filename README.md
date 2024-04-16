@@ -12,10 +12,10 @@
 - [Software Development](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#software-development)
 - [Unit Test](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#unit-test)
 - [Installation](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#prerequisites)
-- [Tests](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#tests)
+
 - [Social Media](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#social-media)
 - [Contact us](https://github.com/CarsonSun2207/RTEP-Project/tree/main?tab=readme-ov-file#contact-us)
-- [Reference Link](https://github.com/CarsonSun2207/RTEP-Project/tree/main?tab=readme-ov-file#reference-links)
+
 
 ## Motivation      
 ### Overview
