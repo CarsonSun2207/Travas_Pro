@@ -175,6 +175,6 @@ Steps to run test are:
 - Hairuo Sun    https://github.com/CarsonSun2207
 - Chi Yin Leung https://github.com/cyter23
 - Jiaqi Yu      https://github.com/KKJYu
-- YUQING LI     https://github.com/YUQINGLI77
+- YuQing Li     https://github.com/YUQINGLI77
 ## 
 ## Reference Links   
