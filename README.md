@@ -122,6 +122,26 @@ if (distance != -1 && distance < 60) {
 
 ...
 ```
+- Server
+```
+...
+    Server server;
+    Readmsg rdmsg(server);
+    Trafficsig trafsig(rdmsg,server);
+
+    server.setupServer(server_fd, address, port);
+    std::cout<<"aaa"<<std::endl;
+    server.acceptConnection(server_fd, address);
+    trafsig.start();
+    rdmsg.start();
+    trafsig.join();
+    rdmsg.join();
+    std::cout<<"End connection?(y/n)"<<std::endl;
+    std::cin>>keyin;
+    if(keyin=='y')
+       { close(server.clt_soc);
+        close(server_fd);
+```
 
 ## Prerequisites   
 1. Downloading from github.
