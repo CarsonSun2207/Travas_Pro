@@ -21,11 +21,7 @@ To complie this program:
 
 using namespace std;
 
-// Callback function to handle GPIO interrupt
-void gpioInterruptHandler(int gpio, int level, uint32_t tick) {
-    cout << "Interrupt detected on GPIO " << gpio << endl;
-    // Add more functionality here as needed
-}
+
 
 class CppThread {
 
@@ -45,10 +41,10 @@ private:
     std::thread uthread;
 };
 
-class RFIDThread : public CppThread {
+class RFIDThread : public CppThread { //created a thread to implemet detection and reading
 
 private:
-    void run() override {
+    void run() override {    //detect the presence of rfid card/tag, read them and then printout them
         CMFRC522 mfrc522;
         mfrc522.PCD_Init();
         while(1) { 
@@ -72,8 +68,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    // Set GPIO 17 to trigger an interrupt on a rising edge
-    gpioSetISRFunc(18, RISING_EDGE, 0, gpioInterruptHandler);
+
 
     RFIDThread rfidthd;
     rfidthd.start();
