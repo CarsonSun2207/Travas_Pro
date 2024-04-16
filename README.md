@@ -122,57 +122,57 @@ The second Raspberry Pi acts as a server that connects the traffic light signals
 Perform unit test in this work. Test cases are:
 - Motor
 ```
-...
-switch (command) {
-            case 1:		#Forward
-                motor.Forward();
-                break;
-            case 2:		#Backward
-                motor.Backward();
-                break;
-            case 3:		#TurnLeft
-                motor.TurnLeft();
-                break;
-            case 4:		#TurnRight
-                motor.TurnRight();
-                break;
-            case 5:		#Stop
-                motor.Stop();
-                break;
-            default:
-                std::cerr << "Invalid command" << std::endl;
-                break;
-        }
-...
+    ...
+    switch (command) {
+                case 1:		#Forward
+                    motor.Forward();
+                    break;
+                case 2:		#Backward
+                    motor.Backward();
+                    break;
+                case 3:		#TurnLeft
+                    motor.TurnLeft();
+                    break;
+                case 4:		#TurnRight
+                    motor.TurnRight();
+                    break;
+                case 5:		#Stop
+                    motor.Stop();
+                    break;
+                default:
+                    std::cerr << "Invalid command" << std::endl;
+                    break;
+            }
+    ...
 ```
 - RFID Reader
 ```
-...
-   RFIDThread rfidthd;
-   TogglingThread tglthd;
-   rfidthd.start();
-   rfidthd.join();
-...
+    ...
+    RFIDThread rfidthd;
+    TogglingThread tglthd;
+    rfidthd.start();
+    rfidthd.join();
+    ...
 ```
 - Ultrasonic Sensor and Motor
 ```
-...
-if (distance != -1 && distance < 60) {
-            motor.Stop();
-        } else {
-            motor.Forward();
-        }
-...
+    ...
+    if (distance != -1 && distance < 60) {
+                motor.Stop();
+            } else {
+                motor.Forward();
+            }
+    ...
 ```
 - Line Tracking
 ```
-...
+    ...
 
-...
+    ...
 ```
 - Server
 ```
-...
+    ...
     Server server;
     Readmsg rdmsg(server);
     Trafficsig trafsig(rdmsg,server);
@@ -192,7 +192,7 @@ if (distance != -1 && distance < 60) {
 ```
 - Client
 ```
-...
+    ...
     Client client;
     client.setupSocket(host, port);// create class 
     if(gpioInitialise()<0){
@@ -215,7 +215,7 @@ if (distance != -1 && distance < 60) {
     ...
 ```
 ## Installation   
-1. Downloading from github.
+1. Downloading from GitHub.
 2. Installing needed libraries on your Pi.
 >* PIGPIO: The library can be found [here](https://abyz.me.uk/rpi/pigpio/download.html)
 >* CMFRC522: The library can be found [here](https://github.com/chihebabid/CMFRC522)  
@@ -236,5 +236,5 @@ Steps to run test are:
 - Chi Yin Leung https://github.com/cyter23
 - Jiaqi Yu      https://github.com/KKJYu
 - YUQING LI     https://github.com/YUQINGLI77
-## 
+
 ## Reference Links   
