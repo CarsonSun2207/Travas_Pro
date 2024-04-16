@@ -236,7 +236,13 @@ Steps to run test are:
 ```
 
 ## Social Media   
-- Welcome to follow our TikTok [@travas_pro](http://www.tiktok.com/@travas_pro)        
+- Welcome to follow our TikTok [@travas_pro](http://www.tiktok.com/@travas_pro)
+
+<p align="center">
+  <img src="https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/5c1ddd1e-378b-4fe3-9dd6-2f3bb84b3fbd" width = 300px/>
+</p>  
+
+
 
 ## Contact us
 - Hairuo Sun    https://github.com/CarsonSun2207
