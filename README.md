@@ -1,7 +1,8 @@
 # Onboard Anti-Collision Control and Virtual Traffic Light System - `Travas_Pro`
 
-![imagesrc*="#w50"]("C:\Users\YUQING LI\OneDrive - University of Glasgow\图片\Travas.png")
-
+<p align="center">
+  <img src="C:\Users\YUQING LI\OneDrive - University of Glasgow\图片\Travas.png">
+</p>
 
 ## Motivation   
 
