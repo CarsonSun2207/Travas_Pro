@@ -68,13 +68,13 @@ The first Raspberry Pi acts as a node connected to the server, which is mounted 
     - `PCA9685`
         - Configuring the registers and channels to control the DC motor set.
         - Create I2C connection with the elements stated above.
-    - `Motor`
+    - `Motor`  
         - Defining the movement logic. (Forward, turning, backward, etc.)
         - Setting the speed.
-    - `Ultrasonic`
+    - `Ultrasonic`  
         - Calculating the relative distance to the obstacle.
         - Return the calculated distance and store the value.
-    - `Linetracking`
+    - `Linetracking`  
         - Defining the line tracking logic.
         - Configure the light sensor array pins.
     - `Client`
