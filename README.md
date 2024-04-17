@@ -19,7 +19,7 @@
 
 ## Motivation      
 ### Overview
-In the not-so-distant future, picture yourself stepping into a world where vehicles become guardians of safety and pioneers of intelligent mobility. Our latest project, an Anti-Collision Control and Virtual Traffic Light System, is the protagonist of this narrative, reshaping the way we perceive road safety.
+In the near future, imagine yourself stepping into a world where vehicles become guardians of safety and pioneers of intelligent mobility. Our latest project, an Anti-Collision Control and Virtual Traffic Light System, is the protagonist of this narrative, reshaping the way we perceive road safety.
 
 Meet Travas, a daily commuter navigating bustling city streets. As he merges into traffic, his vehicle becomes a sanctuary of security, thanks to our revolutionary solution.
 
