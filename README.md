@@ -27,7 +27,7 @@ On a foggy morning, as Travas approaches an intersection, the system detects an 
 
 But it doesn't end there. Imagine Travas encountering a traffic light displaying a vibrant red hue. Even when the light turns green, his vehicle, guided by our intelligent system, remains stationary if pedestrians persist ahead. A fusion of obstacle awareness and traffic signal synchronization ensures not just safety but an efficient and harmonious flow of traffic.
 
-### Project  Preponderance
+### Project  Scope
 1. System flexibility
     - Line tracking and obstacle avoidance in real-life
        - The integrated functionalities can be utilised to navigate through complex road conditions especially when pedestrians crossing the road ignoring the traffic light.
