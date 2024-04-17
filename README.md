@@ -19,13 +19,13 @@
 
 ## Motivation      
 ### Overview
-In the near future, imagine to step into a world where vehicles become guardians on road and pioneers of robust mobility. Our latest project, an Anti-Collision Control and Virtual Traffic Light System, is the protagonist of this narrative, reshaping the future to maintain road safety and robust traffic  control.
+In the near future, imagine the car as the guardian of the road and the pioneer of powerful mobility. Our latest project, Onboard Anti-Collision and Path Navigation Control, and Traffic Control System, Travas is the protagonist of this narrative, reimagining the future, To maintain road safety and robust traffic control.
 
-Meet Travas, a daily commuter navigating bustling city streets. With our revolutionary solution, vehicle becomes a sanctuary of security, merging into the traffic.
+Meet Travas, who spends his days navigating busy city streets. With our revolutionary solutions, vehicles become safe havens, integrated into traffic.
 
-On a foggy morning, as Travas approaches an intersection, the system detects an unexpected pedestrian shrouded in mist. In a blink, his vehicle gracefully halts, preventing a potential mishap. As the pedestrian leaves, the car intuitively resumes its journey, seamlessly blending innovation with everyday life.
+On a foggy morning, when Travas approaches an intersection, a chip on the side of the road sends a warning signal to the car that the road ahead is dangerous, thus alerting the driver to drive carefully. When it receives a signal from the second chip, it means the car has left the road. This system helps car owners optimize their journeys, seamlessly integrating innovation with their daily lives.
 
-But it doesn't end there. Imagine Travas encountering a traffic light displaying a vibrant red hue. Even when the light turns green, his vehicle, guided by our intelligent system, remains stationary if pedestrians persist ahead. A fusion of obstacle awareness and traffic signal synchronization ensures not just safety but an efficient and harmonious flow of traffic.
+But it didn't end there. If Travas encounters a pedestrian walking in front of him, his car will remain stationary under the detection of our ultrasound system. This also ensures efficient and harmonious traffic flow.
 
 ### Project  Scope
 1. System flexibility
