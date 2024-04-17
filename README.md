@@ -67,8 +67,8 @@ But it doesn't end there. Imagine Travas encountering a traffic light displaying
 
 
 ## Software Development   
-### The First Raspberry Pi
-The first Raspberry Pi acts as a node connected to the server, which is mounted on the car.
+### Onboard Raspberry Pi
+Onboard Raspberry Pi acts as a node connected to the server, which is mounted on the car.
 - Function
     - When the car passes through the entrance of the road, the RFID reader on the car will sense the chip corresponding to the entrance, thus sending an entry signal to the server, and will receive the signal from the corresponding server to carry out the next operation. Similarly, when the car is leaving the road, the RFID reader on the car will sense the chip corresponding to the exit, thus sending the leave signal to the server.
     - Tracking sensor will make the car follow the route designed by tracking line, including forward, left turn and right turn.
@@ -111,9 +111,15 @@ The first Raspberry Pi acts as a node connected to the server, which is mounted 
   ![UltrasonicLineTrack_FlowChart](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/9dbbd942-08f1-4576-ab61-486260da80df)
 
 
-### The second Raspberry Pi
-The second Raspberry Pi acts as a server that connects the traffic light signals of the road system. 
-- Function: When it receives the RFID signal coming from the car to enter the road, if the traffic light signal is red at this time, it will transmit the command of stop to the Raspberry Pi in the car, to make the car stop; if the light is green at this time, it will not send any command. When it receives the RFID signal from the car to leave, it will stop sending commands to the Raspberry Pi in the car according to the traffic light signal.
+### Offboard Raspberry Pi
+Offboard Raspberry Pi acts as a server that connects the traffic light signals of the road system. 
+- Function:
+  1. Traffic control
+ When it receives the RFID signal coming from the car to enter the road, if the traffic light signal will be changed red at this time, it will transmit the stop command  to the Onboard Raspberry Pi in the car, to notify the user to stop the car by activating the onboard buzzer; if the signal  becmomes green at this time, it will deactivate the onboard buzzer , this  indicates the user to continue his journey . When it receives the RFID signal from the car to leave, it will stop sending commands to the Raspberry Pi in the car according to the traffic light signal.
+
+  2.Line Tracking and Obstacle Avoidance
+  The motion of the car is controlled by the light sensor module, when the line is detected. 
+
 - Class
     - `Server`
         - Set up server by the server IP address & port number.
