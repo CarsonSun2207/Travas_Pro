@@ -238,7 +238,7 @@ Perform unit test in this work. Test cases are:
 ```
 - Buzzer
 ```
-...
+    ...
     case 1: {
                 gpioPWM(17, 128);
                 std::cout << "buzzzzzzzzzz\n";
@@ -256,7 +256,7 @@ Perform unit test in this work. Test cases are:
                 gpioTerminate(); // Cleanup pigpio
                 return 0; // Exit the program
             }
-...
+    ...
 ```
 ## Installation   
 1. Downloading from GitHub.
