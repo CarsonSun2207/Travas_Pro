@@ -72,7 +72,7 @@ Onboard Raspberry Pi acts as a node connected to the server, which is mounted on
 - Function
     - When the car passes through the entrance of the road, the RFID reader on the car will sense the chip corresponding to the entrance, thus sending an entry signal to the server, and will receive the signal from the corresponding server to carry out the next operation. Similarly, when the car is leaving the road, the RFID reader on the car will sense the chip corresponding to the exit, thus sending the leave signal to the server.
     - Tracking sensor will make the car follow the route designed by tracking line, including forward, left turn and right turn.
-    - 
+    
 - Libraries    
     - pigpio
     - CMFRC522
@@ -113,12 +113,10 @@ Onboard Raspberry Pi acts as a node connected to the server, which is mounted on
 
 ### Offboard Raspberry Pi
 Offboard Raspberry Pi acts as a server that connects the traffic light signals of the road system. 
-- Function:
-  1. Traffic control
- When it receives the RFID signal coming from the car to enter the road, if the traffic light signal will be changed red at this time, it will transmit the stop command  to the Onboard Raspberry Pi in the car, to notify the user to stop the car by activating the onboard buzzer; if the signal  becmomes green at this time, it will deactivate the onboard buzzer , this  indicates the user to continue his journey . When it receives the RFID signal from the car to leave, it will stop sending commands to the Raspberry Pi in the car according to the traffic light signal.
+- Function
+    - Traffic control: When it receives the RFID signal coming from the car to enter the road, if the traffic light signal will be changed red at this time, it will transmit the stop command  to the Onboard Raspberry Pi in the car, to notify the user to stop the car by activating the onboard buzzer; if the signal  becmomes green at this time, it will deactivate the onboard buzzer , this  indicates the user to continue his journey . When it receives the RFID signal from the car to leave, it will stop sending commands to the Raspberry Pi in the car according to the traffic light signal.
 
-  2.Line Tracking and Obstacle Avoidance
-  The motion of the car is controlled by the light sensor module, when the line is detected. 
+    - Line Tracking and Obstacle Avoidance: The motion of the car is controlled by the light sensor module, when the line is detected. 
 
 - Class
     - `Server`
