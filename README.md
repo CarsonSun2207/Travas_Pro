@@ -19,13 +19,11 @@
 
 ## Motivation      
 ### Overview
-In the near future, imagine the car as the guardian of the road and the pioneer of powerful mobility. Our latest project, Onboard Anti-Collision and Path Navigation Control, and Traffic Control System, Travas is the protagonist of this narrative, reimagining the future, To maintain road safety and robust traffic control.
+In the near future, imagine the car as the guardian of the road and the pioneer of powerful mobility. Our latest project, Onboard Anti-Collision and Path Navigation Control, and Traffic Control System.
 
-Meet Travas, who spends his days navigating busy city streets. With our revolutionary solutions, vehicles become safe havens, integrated into traffic.
+On a foggy morning, when the car approaches an intersection, the chip on the side of the road will send a warning signal to the car that the road ahead is dangerous, so as to remind the driver to drive carefully. When it receives a signal from the second chip, it means the car has left the road. This system helps car owners optimize their journeys, seamlessly integrating innovation with their daily lives.
 
-On a foggy morning, when Travas approaches an intersection, a chip on the side of the road sends a warning signal to the car that the road ahead is dangerous, thus alerting the driver to drive carefully. When it receives a signal from the second chip, it means the car has left the road. This system helps car owners optimize their journeys, seamlessly integrating innovation with their daily lives.
-
-But it didn't end there. If Travas encounters a pedestrian walking in front of him, his car will remain stationary under the detection of our ultrasound system. This also ensures efficient and harmonious traffic flow.
+But it didn't end there. If the vehicle encounters a pedestrian walking in front, the pedestrian will also keep the vehicle stationary under the detection of our ultrasonic system. This also ensures efficient and harmonious traffic flow.
 
 ### Project  Scope
 1. System flexibility
