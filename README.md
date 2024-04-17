@@ -236,6 +236,28 @@ Perform unit test in this work. Test cases are:
     if (client.sock < 0) return -1;
     ...
 ```
+- Buzzer
+```
+...
+    case 1: {
+                gpioPWM(17, 128);
+                std::cout << "buzzzzzzzzzz\n";
+                std::this_thread::sleep_for(std::chrono::seconds(1)); // Wait for 2 seconds
+                break;
+            }
+            case 2: {
+                gpioPWM(17, 0);
+                std::cout << "Silence\n";
+                std::this_thread::sleep_for(std::chrono::seconds(1)); // Wait for 2 seconds
+                break;
+            }
+            case 0: {
+                // Special case to stop the loop and terminate the program
+                gpioTerminate(); // Cleanup pigpio
+                return 0; // Exit the program
+            }
+...
+```
 ## Installation   
 1. Downloading from GitHub.
 2. Installing needed libraries on your Pi.
