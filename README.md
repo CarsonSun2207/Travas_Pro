@@ -1,4 +1,4 @@
-# Onboard Anti-Collision and path navigation Control, and Virtual Traffic Light System - `Travas_Pro`
+# Onboard Anti-Collision and Path Navigation Control, and Virtual Traffic Light System - `Travas_Pro`
 
 <p align="center">
   <img src="https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/2e611b63-6fc9-4d58-8604-65ee3d71812d" width=300px />
