@@ -4,7 +4,7 @@
   <img src="https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/2e611b63-6fc9-4d58-8604-65ee3d71812d" width=300px />
 </p>
 
-
+See the full demonstration video on [YouTube](https://youtu.be/WRoeA3ryX2Q?si=PkR9EacjtkUIsWkW)
 
 ## Table of Contents
 - [Motivation](https://github.com/CarsonSun2207/RTEP-Project/blob/main/README.md#motivation)
