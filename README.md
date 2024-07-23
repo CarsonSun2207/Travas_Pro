@@ -66,7 +66,7 @@ But it didn't end there. If the vehicle encounters a pedestrian walking in front
 
 ## Software Development   
 ### Onboard Raspberry Pi
-Onboard Raspberry Pi acts as a node connected to the server, which is mounted on the car.
+Onboard Raspberry Pi acts as a node (client) connected to the server, which is mounted on the car.
 - Function
     - When the car passes through the entrance of the road, the RFID reader on the car will sense the chip corresponding to the entrance, thus sending an entry signal to the server, and will receive the signal from the corresponding server to carry out the next operation. Similarly, when the car is leaving the road, the RFID reader on the car will sense the chip corresponding to the exit, thus sending the leave signal to the server.
     - Tracking sensor will make the car follow the route designed by tracking line, including forward, left turn and right turn.
@@ -74,25 +74,25 @@ Onboard Raspberry Pi acts as a node connected to the server, which is mounted on
 - Libraries    
     - pigpio
     - CMFRC522
-- Class
     - `PCA9685`
         - Configuring the registers and channels to control the DC motor set.
         - Create I2C connection with the elements stated above.
-    - `Motor`
-        - Defining the movement logic. (Forward, turning, backward, etc.)
-        - Setting the speed.
-    - `Ultrasonic`
-        - Calculating the relative distance to the obstacle.
-        - Return the calculated distance and store the value.
     - `Linetracking`
         - Defining the line tracking logic.
         - Configure the light sensor array pins.
+    - `Ultrasonic`
+        - Calculating the relative distance to the obstacle.
+        - Return the calculated distance and store the value.
+    - `Motor`
+        - Defining the movement logic. (Forward, turning, backward, etc.)
+        - Setting the speed.
     - `Client`
         - Read the byte number of the message in the socket.
         - Set up socket connection with server by host address and port number.
         - Send a message depending on whether the car has entered or exited the zone.
         - Identify the signal sent by the server and recreate one for the client.
         - Read the data and identify what the signal is.
+- Class
     - `RFIDThread`
         - To detect whether the car is present and store the message into a character array get_id[16] 
     - `Readingmsg`
@@ -116,7 +116,7 @@ Offboard Raspberry Pi acts as a server that connects the traffic light signals o
 
     - Line Tracking and Obstacle Avoidance: The motion of the car is controlled by the light sensor module, when the line is detected. 
 
-- Class
+- Libraries
     - `Server`
         - Set up server by the server IP address & port number.
         - Accept the connection request from the client in the socket-clt_soc.
@@ -127,6 +127,7 @@ Offboard Raspberry Pi acts as a server that connects the traffic light signals o
         - Detect whether the message is entering or exiting.
     - `Trafficsig`
         - Generate the traffic light signal.
+    
 - Flow Chart
     - Server
   ![Server_FlowChart](https://github.com/CarsonSun2207/RTEP-Project/assets/158082859/dc733559-fd17-40ce-8423-bee159672ef6)
