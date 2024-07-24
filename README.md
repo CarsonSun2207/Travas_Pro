@@ -7,14 +7,14 @@
 See the full demonstration video on [YouTube](https://youtu.be/WRoeA3ryX2Q?si=PkR9EacjtkUIsWkW)
 
 ## Table of Contents
-- [Motivation](https://github.com/CarsonSun2207/RTEP-Project/blob/main/README.md#motivation)
-- [Hardware Requirements](https://github.com/CarsonSun2207/RTEP-Project/tree/Test#hardware-requirements)
-- [Software Development](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#software-development)
-- [Unit Test](https://github.com/CarsonSun2207/Travas_Pro/edit/modify-readme/README.md#unit-test)
-- [Installation](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#prerequisites)
+- [Motivation](https://github.com/CarsonSun2207/Travas_Pro/tree/main#motivation)
+- [Hardware Requirements](https://github.com/CarsonSun2207/Travas_Pro/tree/main#hardware-requirements)
+- [Software Development](https://github.com/CarsonSun2207/Travas_Pro/tree/main#software-development)
+- [Unit Test](https://github.com/CarsonSun2207/Travas_Pro/tree/main#unit-test)
+- [Installation](https://github.com/CarsonSun2207/Travas_Pro/tree/main#installation)
 
-- [Social Media](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#social-media)
-- [Contact us](https://github.com/CarsonSun2207/RTEP-Project/tree/main?tab=readme-ov-file#contact-us)
+- [Social Media](https://github.com/CarsonSun2207/Travas_Pro/tree/main#social-media)
+- [Contact us](https://github.com/CarsonSun2207/Travas_Pro/tree/main#contact-us)
 
 
 ## Motivation      
@@ -140,50 +140,62 @@ Offboard Raspberry Pi acts as a server that connects the traffic light signals o
 
 
 ## Unit Test
-Google test is used for unit tests in this work. Test cases are:
-- To test whether the server and client can connect 
-```
-      TEST(ServerTest, SetupServer) {
-        Server server;
-        int server_fd;
-        struct sockaddr_in address;
-        int port = 5560;
-    
-        server.setupServer(server_fd, address, port);
-        EXPECT_GT(server_fd, 0);
-      }
-```
+- Google test is used for unit tests in this work.
+    -  Install Google Test on Raspberry Pi
+    ```
+    sudo apt-get install libgtest-dev
+    sudo apt-get install cmake
+    cd /usr/src/gtest
+    sudo cmake .
+    sudo make
+    sudo cp *.a /usr/lib
+    ```
+    - Add Google Test to CMakeList.txt
+
+- Test cases are:
+- 1. To test whether the server and client can connect (Server_test.cpp)
+    ```
+          TEST(ServerTest, SetupServer) {
+            Server server;
+            int server_fd;
+            struct sockaddr_in address;
+            int port = 5560;
+        
+            server.setupServer(server_fd, address, port);
+            EXPECT_GT(server_fd, 0);
+          }
+    ```
   - Testing Result
 <p align="center">
   <img src="https://github.com/user-attachments/assets/26f97ed1-7fdf-49fe-8011-b29edc1cbfc4"  />
 </p>
     
-- To test whether the signal transmission between the server and the client complies with the regulations
-```
-    TEST_F(TrafficsigTest, TrafficSignalHandler) {
-        // Initial state should be false
-        EXPECT_FALSE(trafficSignal.getTrafficSignal());
-    
-        // Simulate the conditions under which trafficSignalHandler should be called
-        trafficSignal.testStaticTrafficSignalHandler();
-    
-        // After one call, the signal should be true
-        EXPECT_TRUE(trafficSignal.getTrafficSignal());
-    
-        // Call the handler again to toggle the signal back
-        trafficSignal.testStaticTrafficSignalHandler();
-    
-        // After the second call, the signal should be false again
-        EXPECT_FALSE(trafficSignal.getTrafficSignal());
-    
-        // Simulate changing the state to "Exited"
-        strcpy(readmsg.rdmsg, "Exited");
-        trafficSignal.testStaticTrafficSignalHandler();
-    
-        // Verify the signal state if needed based on "Exited"
-        EXPECT_TRUE(trafficSignal.getTrafficSignal()); // Adjust based on actual logic
-    }
-```
+- 2. To test whether the signal transmission between the server and the client complies with the regulations (Tsig_test.cpp)
+    ```
+        TEST_F(TrafficsigTest, TrafficSignalHandler) {
+            // Initial state should be false
+            EXPECT_FALSE(trafficSignal.getTrafficSignal());
+        
+            // Simulate the conditions under which trafficSignalHandler should be called
+            trafficSignal.testStaticTrafficSignalHandler();
+        
+            // After one call, the signal should be true
+            EXPECT_TRUE(trafficSignal.getTrafficSignal());
+        
+            // Call the handler again to toggle the signal back
+            trafficSignal.testStaticTrafficSignalHandler();
+        
+            // After the second call, the signal should be false again
+            EXPECT_FALSE(trafficSignal.getTrafficSignal());
+        
+            // Simulate changing the state to "Exited"
+            strcpy(readmsg.rdmsg, "Exited");
+            trafficSignal.testStaticTrafficSignalHandler();
+        
+            // Verify the signal state if needed based on "Exited"
+            EXPECT_TRUE(trafficSignal.getTrafficSignal()); // Adjust based on actual logic
+        }
+    ```
   - Testing Result
 <p align="center">
   <img src="https://github.com/user-attachments/assets/70f0368a-5608-4b88-bef5-675be468b694"  />
@@ -196,19 +208,20 @@ Google test is used for unit tests in this work. Test cases are:
 >* PIGPIO: The library can be found [here](https://abyz.me.uk/rpi/pigpio/download.html)
 >* CMFRC522: The library can be found [here](https://github.com/chihebabid/CMFRC522)  
 
-3. To compile and build the code
-- For the onboard Raspberry Pi (Client)
+3. Using CMake To compile and build the code
+- Both for the onboard Raspberry Pi (Client) and the offboard Raspberry Pi (Server)
+  - Navigate to your project directory.
+  - Create a build directory.
+  - Run CMake
+  - Build the project
   ```
-    g++ -c "lib.cpp"
-    ar rcs  "lib.a" "lib.o"
-    g++ -Wall -pthread -o main_client main_client .cpp -lpigpio -lrt -L. -l:CMFRC522.a
-    sudo ./main_client
+    cd /path_to_your_project_directory
+    mkdir build
+    cd build
+    sudo cmake ..
+    sudo make
   ```
-- For the offboard Raspberry Pi (Server)
-  ```
-  g++ -Wall -pthread -o main_server main_erver.cpp    
-  sudo ./main_erver  
-  ```
+
 
 ## Social Media   
 - Welcome to follow our TikTok [@travas_pro](http://www.tiktok.com/@travas_pro)
