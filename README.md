@@ -10,7 +10,7 @@ See the full demonstration video on [YouTube](https://youtu.be/WRoeA3ryX2Q?si=Pk
 - [Motivation](https://github.com/CarsonSun2207/RTEP-Project/blob/main/README.md#motivation)
 - [Hardware Requirements](https://github.com/CarsonSun2207/RTEP-Project/tree/Test#hardware-requirements)
 - [Software Development](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#software-development)
-- [Unit Test](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#unit-test)
+- [Unit Test](https://github.com/CarsonSun2207/Travas_Pro/edit/modify-readme/README.md#unit-test)
 - [Installation](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#prerequisites)
 
 - [Social Media](https://github.com/CarsonSun2207/RTEP-Project/tree/Test?tab=readme-ov-file#social-media)
@@ -140,129 +140,56 @@ Offboard Raspberry Pi acts as a server that connects the traffic light signals o
 
 
 ## Unit Test
-Google test is used for unit test in this work. Test cases are:
-- Server
-- Motor
+Google test is used for unit tests in this work. Test cases are:
+- To test whether the server and client can connect 
 ```
-    ...
-    switch (command) {
-                case 1:		#Forward
-                    motor.Forward();
-                    break;
-                case 2:		#Backward
-                    motor.Backward();
-                    break;
-                case 3:		#TurnLeft
-                    motor.TurnLeft();
-                    break;
-                case 4:		#TurnRight
-                    motor.TurnRight();
-                    break;
-                case 5:		#Stop
-                    motor.Stop();
-                    break;
-                default:
-                    std::cerr << "Invalid command" << std::endl;
-                    break;
-            }
-    ...
+      TEST(ServerTest, SetupServer) {
+        Server server;
+        int server_fd;
+        struct sockaddr_in address;
+        int port = 5560;
+    
+        server.setupServer(server_fd, address, port);
+        EXPECT_GT(server_fd, 0);
+      }
 ```
-- RFID Reader
+  - Testing Result
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/26f97ed1-7fdf-49fe-8011-b29edc1cbfc4"  />
+</p>
+    
+- To test whether the signal transmission between the server and the client complies with the regulations
 ```
-    ...
-    RFIDThread rfidthd;
-    TogglingThread tglthd;
-    rfidthd.start();
-    rfidthd.join();
-    ...
+    TEST_F(TrafficsigTest, TrafficSignalHandler) {
+        // Initial state should be false
+        EXPECT_FALSE(trafficSignal.getTrafficSignal());
+    
+        // Simulate the conditions under which trafficSignalHandler should be called
+        trafficSignal.testStaticTrafficSignalHandler();
+    
+        // After one call, the signal should be true
+        EXPECT_TRUE(trafficSignal.getTrafficSignal());
+    
+        // Call the handler again to toggle the signal back
+        trafficSignal.testStaticTrafficSignalHandler();
+    
+        // After the second call, the signal should be false again
+        EXPECT_FALSE(trafficSignal.getTrafficSignal());
+    
+        // Simulate changing the state to "Exited"
+        strcpy(readmsg.rdmsg, "Exited");
+        trafficSignal.testStaticTrafficSignalHandler();
+    
+        // Verify the signal state if needed based on "Exited"
+        EXPECT_TRUE(trafficSignal.getTrafficSignal()); // Adjust based on actual logic
+    }
 ```
-- Ultrasonic Sensor and Motor
-```
-    ...
-    if (distance != -1 && distance < 60) {
-                motor.Stop();
-            } else {
-                motor.Forward();
-            }
-    ...
-```
-- Line Tracking
-```
-    ...
-    LineTracking linetracking(motor);
+  - Testing Result
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/70f0368a-5608-4b88-bef5-675be468b694"  />
+</p>
+   
 
-    while (true) {
-        linetracking.detectLine(); // Resume line tracking
-        this_thread::sleep_for(chrono::milliseconds(100));
-    }
-    ...
-```
-- Server
-```
-    ...
-    Server server;
-    Readmsg rdmsg(server);
-    Trafficsig trafsig(rdmsg,server);
-
-    server.setupServer(server_fd, address, port);
-    std::cout<<"aaa"<<std::endl;
-    server.acceptConnection(server_fd, address);
-    trafsig.start();
-    rdmsg.start();
-    trafsig.join();
-    rdmsg.join();
-    std::cout<<"End connection?(y/n)"<<std::endl;
-    std::cin>>keyin;
-    if(keyin=='y')
-       { close(server.clt_soc);
-        close(server_fd);
-```
-- Client
-```
-    ...
-    Client client;
-    client.setupSocket(host, port);// create class 
-    if(gpioInitialise()<0){
-        std::cout<<"Pigpio initialization failed"<<std::endl;
-        return 1;
-    }
-    int i2cHandle = i2cOpen(1, PCA9685_ADDR, 0);
-    if (i2cHandle < 0) {
-        std::cerr << "Failed to open I2C communication." << std::endl;
-        return 1; 
-    }
-    gpioSetISRFunc(18, RISING_EDGE, 0, gpioInterruptHandler);
-    PCA9685 pca(i2cHandle);
-    pca.setup();
-    Motor motor(pca);
-    RFIDThread rfidrd(client);
-    Readingmsg rdingmsg(client);
-    Motioncntrl motctl(client, motor);
-    if (client.sock < 0) return -1;
-    ...
-```
-- Buzzer
-```
-    ...
-    case 1: {
-                gpioPWM(17, 128);
-                std::cout << "buzzzzzzzzzz\n";
-                std::this_thread::sleep_for(std::chrono::seconds(1)); // Wait for 2 seconds
-                break;
-            }
-            case 2: {
-                gpioPWM(17, 0);
-                std::cout << "Silence\n";
-                std::this_thread::sleep_for(std::chrono::seconds(1)); // Wait for 2 seconds
-                break;
-            }
-            case 0: {
-                // Special case to stop the loop and terminate the program
-                gpioTerminate(); // Cleanup pigpio
-                return 0; // Exit the program
-            }
-    ...
-```
 ## Installation   
 1. Downloading from GitHub.
 2. Installing needed libraries on your Pi.
