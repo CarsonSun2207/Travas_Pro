@@ -74,6 +74,8 @@ Onboard Raspberry Pi acts as a node (client) connected to the server, which is m
 - Libraries    
     - pigpio
     - CMFRC522
+    - sys/socket
+    - arpa/inet
     - `PCA9685`
         - Configuring the registers and channels to control the DC motor set.
         - Create I2C connection with the elements stated above.
@@ -93,14 +95,15 @@ Onboard Raspberry Pi acts as a node (client) connected to the server, which is m
         - Identify the signal sent by the server and recreate one for the client.
         - Read the data and identify what the signal is.
 - Class
+    - `CppThread`
+        - A base class for creating thread objects, which provides a common interface for starting and joining threads.
     - `RFIDThread`
         - To detect whether the car is present and store the message into a character array get_id[16] 
     - `Readingmsg`
         - Read the data depending on the number of byte read, which is not equal to 0
-    - `Motioncntrl`
-        - Implement the start and stop the motion of the motor depending on the received signal by the server (referred as clie.sigden())
-    - `CppThread`
-        - Create a thread wrapper for future use
+    - `BuzzCtrl`
+        - Control a buzzer based on the car's status ( Activates the buzzer when the car is stopped and deactivates the buzzer when the car is running or has exited the crossing)
+
 - Flow Chart
     - Buzzer
   ![Buzzer_FlowChart](https://github.com/CarsonSun2207/RTEP-Project/assets/158228597/a683ecc8-5619-4a22-80cf-63dcd7f0fec5)
@@ -127,6 +130,8 @@ Offboard Raspberry Pi acts as a server that connects the traffic light signals o
         - Detect whether the message is entering or exiting.
     - `Trafficsig`
         - Generate the traffic light signal.
+    - `CppThread`
+        - Create a thread wrapper for future use
     
 - Flow Chart
     - Server
@@ -135,7 +140,8 @@ Offboard Raspberry Pi acts as a server that connects the traffic light signals o
 
 
 ## Unit Test
-Perform unit test in this work. Test cases are:
+Google test is used for unit test in this work. Test cases are:
+- Server
 - Motor
 ```
     ...
