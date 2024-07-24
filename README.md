@@ -170,7 +170,7 @@ Offboard Raspberry Pi acts as a server that connects the traffic light signals o
   <img src="https://github.com/user-attachments/assets/26f97ed1-7fdf-49fe-8011-b29edc1cbfc4"  />
 </p>
     
-- 2. To test whether the signal transmission between the server and the client complies with the regulations (Tsig_test.cpp)
+- 2. To test the functionality of the generation of traffic signal  (Tsig_test.cpp)
     ```
         TEST_F(TrafficsigTest, TrafficSignalHandler) {
             // Initial state should be false
