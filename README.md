@@ -200,7 +200,26 @@ Offboard Raspberry Pi acts as a server that connects the traffic light signals o
 <p align="center">
   <img src="https://github.com/user-attachments/assets/70f0368a-5608-4b88-bef5-675be468b694"  />
 </p>
-   
+
+- 3. To test card reading (ser&clie_test01.cpp)
+    ```
+        TEST_F(ClientServerTest, SimulatesCardReading) {
+          std::cout << "Running SimulatesCardReading test" << std::endl;
+      
+          // Simulate card ID
+          std::string cardID = "12345";
+      
+          // Simulate scanning card
+          std::cout << "Before client.scanCard" << std::endl;
+          client.scanCard(cardID);
+          std::cout << "After client.scanCard" << std::endl;
+        }
+    ```
+  - Testing Result
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/639aee64-95e3-4d87-87da-fbfde2bd88a8"  />
+</p>
+
 
 ## Installation   
 1. Downloading from GitHub.
