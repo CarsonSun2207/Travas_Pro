@@ -29,7 +29,7 @@ void LineTracking::detectLine() {
             motor.TurnRight();
             break;
         case 0b000:
-            motor.Slow(); // Consider changing this to a search pattern instead of just slowing
+            motor.Slow(); 
             break;
         default:
             motor.Forward(); // Default action can be modified based on desired behavior
