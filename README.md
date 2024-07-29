@@ -27,25 +27,24 @@ But it didn't end there. If the vehicle encounters a pedestrian walking in front
 
 ### Project  Scope
 1. System flexibility
-    - Line tracking and obstacle avoidance in real-life
+    - Line tracking and obstacle avoidance in real-time
        - The integrated functionalities can be utilised to navigate through complex road conditions especially when pedestrians crossing the road ignoring the traffic light.
        - In a real-life scenario, the programme can be extended to follow a designated road path instead of line track in this project
 2. Driving Safety
-    - At the traffic entrance with a large volume of traffic, our system can greatly control the accident rate after optimization, giving great security to urban traffic
+    - At the road entrance with a large volume of traffic, our system can greatly minimise the accident rate after optimization of traffic management, giving great security to urban traffic
 3. Humanistics
-    - Also, the code has performed outstanding capability to prioritise pedestrians’ lives beyond path-navigating, illustrating great care of humanistic.
+    - Also, the code has performed outstanding capability to prioritise pedestrians’ lives beyond path-navigating, illustrating great care of humanistics.
 
 ## Hardware Requirements   
 
-- Acquired Raspberry Pi 4B board ×2
-- DC speed reduction motor (DRV8837) ×4
+- Raspberry Pi 4B board ×2
+- DC motor (DRV8837) ×4
 - Rechargeable 18560 Bottom-top battery ×2    
 - RFID Reader (RC522)
 - Driver Board (PCA9685PW)
 - Ultrasonic sensor (HC-SR04)
 - Ultrasonic Obstacle Avoidance Module (HC-SR04)    
-- Servo (SG90) x2
-- Tracking Sensor     
+- Light Tracking Sensor     
 - Jumper Wire F/F(4) 
 - XH-2.54-5Pin Cable
 - F-F Cables x n
@@ -94,12 +93,11 @@ Onboard Raspberry Pi acts as a node (client) connected to the server, which is m
         - Send a message depending on whether the car has entered or exited the zone.
         - Identify the signal sent by the server and recreate one for the client.
         - Read the data and identify what the signal is.
-- Class
     - `CppThread`
-        - A base class for creating thread objects, which provides a common interface for starting and joining threads.
+        - Created thread objects, which provides a common interface for starting and joining threads.
     - `RFIDThread`
         - To detect whether the car is present and store the message into a character array get_id[16] 
-    - `Readingmsg`
+    - `Readmsg`
         - Read the data depending on the number of byte read, which is not equal to 0
     - `BuzzCtrl`
         - Control a buzzer based on the car's status ( Activates the buzzer when the car is stopped and deactivates the buzzer when the car is running or has exited the crossing)
@@ -237,8 +235,14 @@ Offboard Raspberry Pi acts as a server that connects the traffic light signals o
     cd /path_to_your_project_directory
     mkdir build
     cd build
-    sudo cmake ..
-    sudo make
+    cmake ..
+    make
+  ```
+4. Run your programme
+- for example, when the executable is Cilent.exe
+- run the following command
+ ```
+    sudo ./Client
   ```
 
 
