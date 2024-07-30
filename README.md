@@ -239,8 +239,8 @@ Offboard Raspberry Pi acts as a server that connects the traffic light signals o
     make
   ```
 4. Run your programme
-- for example, when the executable is Cilent.exe
-- run the following command
+- For example, when the executable is Client.exe
+- Run the following command
  ```
     sudo ./Client
   ```
